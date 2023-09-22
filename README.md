@@ -50,13 +50,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import dmskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@deno/mod.js';
+import dmskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@v0.1.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@deno/mod.js';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@v0.1.0-deno/mod.js';
 ```
 
 #### dmskmap( N, x, strideX, mask, strideMask, y, strideY, fcn )
@@ -183,7 +183,7 @@ import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/
 import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@deno/mod.js';
 import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
 import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@deno/mod.js';
-import dmskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@deno/mod.js';
+import dmskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@v0.1.0-deno/mod.js';
 
 function scale( x ) {
     return x * 10.0;

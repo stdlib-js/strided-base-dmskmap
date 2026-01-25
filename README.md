@@ -43,20 +43,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/strided-base-dmskmap
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import dmskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@esm/index.mjs';
+var dmskmap = require( '@stdlib/strided-base-dmskmap' );
 ```
 
 #### dmskmap( N, x, strideX, mask, strideMask, y, strideY, fcn )
@@ -64,9 +76,9 @@ import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmsk
 Applies a unary function to a double-precision floating-point strided input array according to a strided mask array and assigns results to a double-precision floating-point strided output array.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
+var Uint8Array = require( '@stdlib/array-uint8' );
+var abs = require( '@stdlib/math-base-special-abs' );
 
 var x = new Float64Array( [ -2.0, 1.0, -3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 var m = new Uint8Array( [ 0, 0, 1, 0, 0, 1, 1, 0 ] );
@@ -90,9 +102,9 @@ The function accepts the following arguments:
 The `N` and `stride` parameters determine which elements in the strided arrays are accessed at runtime. For example, to index every other value in `x` and to index the first `N` elements of `y` in reverse order,
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
+var Uint8Array = require( '@stdlib/array-uint8' );
+var abs = require( '@stdlib/math-base-special-abs' );
 
 var x = new Float64Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
 var m = new Uint8Array( [ 0, 0, 1, 0, 0, 1 ] );
@@ -105,9 +117,9 @@ dmskmap( 3, x, 2, m, 2, y, -1, abs );
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][@stdlib/array/float64] views.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
+var Uint8Array = require( '@stdlib/array-uint8' );
+var abs = require( '@stdlib/math-base-special-abs' );
 
 // Initial arrays...
 var x0 = new Float64Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
@@ -128,9 +140,9 @@ dmskmap( 3, x1, -2, m1, 1, y1, 1, abs );
 Applies a unary function to a double-precision floating-point strided input array according to a strided mask array and assigns results to a double-precision floating-point strided output array using alternative indexing semantics.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
+var Uint8Array = require( '@stdlib/array-uint8' );
+var abs = require( '@stdlib/math-base-special-abs' );
 
 var x = new Float64Array( [ -1.0, -2.0, -3.0, -4.0, -5.0 ] );
 var m = new Uint8Array( [ 0, 0, 1, 0, 0 ] );
@@ -149,9 +161,9 @@ The function accepts the following additional arguments:
 While [`typed array`][@stdlib/array/float64] views mandate a view offset based on the underlying `buffer`, the `offsetX` and `offsetY` parameters support indexing semantics based on starting indices. For example, to index every other value in `x` starting from the second value and to index the last `N` elements in `y` in reverse order,
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
+var Uint8Array = require( '@stdlib/array-uint8' );
+var abs = require( '@stdlib/math-base-special-abs' );
 
 var x = new Float64Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
 var m = new Uint8Array( [ 0, 0, 1, 0, 0, 1 ] );
@@ -177,18 +189,13 @@ dmskmap.ndarray( 3, x, 2, 1, m, 2, 1, y, -1, y.length-1, abs );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@esm/index.mjs';
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import Uint8Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-uint8@esm/index.mjs';
-import dmskmap from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-dmskmap@esm/index.mjs';
+```javascript
+var round = require( '@stdlib/math-base-special-round' );
+var randu = require( '@stdlib/random-base-randu' );
+var bernoulli = require( '@stdlib/random-base-bernoulli' );
+var Float64Array = require( '@stdlib/array-float64' );
+var Uint8Array = require( '@stdlib/array-uint8' );
+var dmskmap = require( '@stdlib/strided-base-dmskmap' );
 
 function scale( x ) {
     return x * 10.0;
@@ -209,10 +216,6 @@ console.log( y );
 
 dmskmap.ndarray( x.length, x, 1, 0, m, 1, 0, y, -1, y.length-1, scale );
 console.log( y );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -221,7 +224,129 @@ console.log( y );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/strided/base/dmskmap.h"
+```
+
+#### stdlib_strided_dmskmap( N, \*X, strideX, \*Mask, strideMask, \*Y, strideY, fcn )
+
+Applies a unary function to a double-precision floating-point strided input array according to a strided mask array and assigns results to a double-precision floating-point strided output array.
+
+```c
+#include <stdint.h>
+
+static double scale( const double x ) {
+    return x * 10.0;
+}
+
+double X[] = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 };
+uint8_t M[] = { 0, 0, 1, 0, 0, 1 };
+double Y[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+
+int64_t N = 6;
+
+stdlib_strided_dmskmap( N, X, 1, M, 1, Y, 1, scale );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] int64_t` number of indexed elements.
+-   **X**: `[in] double*` input array.
+-   **strideX** `[in] int64_t` index increment for `X`.
+-   **Mask**: `[in] uint8_t*` mask array.
+-   **strideMask**: `[in] int64_t` index increment for `Mask`.
+-   **Y**: `[out] double*` output array.
+-   **strideY**: `[in] int64_t` index increment for `Y`.
+-   **fcn**: `[in] double (*fcn)( double )` unary function to apply.
+
+```c
+void stdlib_strided_dmskmap( const int64_t N, const double *X, const int64_t strideX, const uint8_t *Mask, const int64_t strideMask, double *Y, const int64_t strideY, double (*fcn)( double ) );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/strided/base/dmskmap.h"
+#include <stdint.h>
+#include <stdio.h>
+#include <inttypes.h>
+
+// Define a callback:
+static double scale( const double x ) {
+    return x * 10.0;
+}
+
+int main( void ) {
+    // Create an input strided array:
+    double X[] = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 };
+
+    // Create a mask strided array:
+    uint8_t M[] = { 0, 0, 1, 0, 0, 1 };
+
+    // Create an output strided array:
+    double Y[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+
+    // Specify the number of elements:
+    int64_t N = 6;
+
+    // Define the strides:
+    int64_t strideX = 1;
+    int64_t strideM = 1;
+    int64_t strideY = -1;
+
+    // Apply the callback:
+    stdlib_strided_dmskmap( N, X, strideX, M, strideM, Y, strideY, scale );
+
+    // Print the results:
+    for ( int64_t i = 0; i < N; i++ ) {
+        printf( "Y[ %"PRId64" ] = %lf\n", i, Y[ i ] );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -249,7 +374,7 @@ console.log( y );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -266,7 +391,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -312,19 +437,19 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/strided-base-dmskmap/main/LICENSE
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/esm
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
-[@stdlib/array/uint8]: https://github.com/stdlib-js/array-uint8/tree/esm
+[@stdlib/array/uint8]: https://github.com/stdlib-js/array-uint8
 
 <!-- <related-links> -->
 
-[@stdlib/strided/base/dmap]: https://github.com/stdlib-js/strided-base-dmap/tree/esm
+[@stdlib/strided/base/dmap]: https://github.com/stdlib-js/strided-base-dmap
 
-[@stdlib/strided/base/dmskmap2]: https://github.com/stdlib-js/strided-base-dmskmap2/tree/esm
+[@stdlib/strided/base/dmskmap2]: https://github.com/stdlib-js/strided-base-dmskmap2
 
-[@stdlib/strided/base/mskunary]: https://github.com/stdlib-js/strided-base-mskunary/tree/esm
+[@stdlib/strided/base/mskunary]: https://github.com/stdlib-js/strided-base-mskunary
 
-[@stdlib/strided/base/smskmap]: https://github.com/stdlib-js/strided-base-smskmap/tree/esm
+[@stdlib/strided/base/smskmap]: https://github.com/stdlib-js/strided-base-smskmap
 
 <!-- </related-links> -->
 
